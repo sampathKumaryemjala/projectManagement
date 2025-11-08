@@ -10,7 +10,7 @@ import {
   resendEmailVerification,
   resetForgotPassword,
   verifyEmail,
-} from "../controllers/auth.controller.js";
+} from "../controllers/auth.controllers.js";
 import { validate } from "../middlewares/validator.middleware.js";
 import {
   userChangeCurrentPasswordValidator,
