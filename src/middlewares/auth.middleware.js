@@ -30,7 +30,7 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
 });
 
 export const validateProjectPermission = (roles = []) => {
-  asyncHandler(async (req, res, next) => {
+  return asyncHandler(async (req, res, next) => {  // ✅ Add 'return' here!
     const { projectId } = req.params;
 
     if (!projectId) {
@@ -50,7 +50,8 @@ export const validateProjectPermission = (roles = []) => {
 
     req.user.role = givenRole;
 
-    if (!roles.includes(givenRole)) {
+    // Only check roles if roles array is provided and not empty
+    if (roles.length > 0 && !roles.includes(givenRole)) {
       throw new ApiError(
         403,
         "You do not have permission to perform this action",

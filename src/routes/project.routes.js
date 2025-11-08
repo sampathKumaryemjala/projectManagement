@@ -19,8 +19,7 @@ import {
   verifyJWT,
   validateProjectPermission,
 } from "../middlewares/auth.middleware.js";
-import { AvailableUserRole, UserRolesEnum } from "../utils/constants.js";
-
+import { AvailableUserRoles, UserRolesEnum } from "../utils/constants.js";
 const router = Router();
 router.use(verifyJWT);
 
@@ -31,7 +30,7 @@ router
 
 router
   .route("/:projectId")
-  .get(validateProjectPermission(AvailableUserRole), getProjectById)
+  .get(validateProjectPermission(AvailableUserRoles), getProjectById)
   .put(
     validateProjectPermission([UserRolesEnum.ADMIN]),
     createProjectValidator(),

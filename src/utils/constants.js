@@ -4,7 +4,8 @@ export const UserRolesEnum = {
   MEMBER: "member",
 };
 
-export const AvailableUserRole = Object.values(UserRolesEnum);
+// Available user roles as an array
+export const AvailableUserRoles = Object.values(UserRolesEnum);
 
 export const TaskStatusEnum = {
   TODO: "todo",
@@ -13,3 +14,32 @@ export const TaskStatusEnum = {
 };
 
 export const AvailableTaskStatues = Object.values(TaskStatusEnum);
+
+
+
+// Project member roles
+export const ProjectRolesEnum = {
+  OWNER: "owner",
+  ADMIN: "admin",
+  MEMBER: "member",
+  VIEWER: "viewer",
+};
+
+// Available project roles as an array
+export const AvailableProjectRoles = Object.values(ProjectRolesEnum);
+
+// Project status
+export const ProjectStatusEnum = {
+  ACTIVE: "active",
+  ON_HOLD: "on_hold",
+  COMPLETED: "completed",
+  ARCHIVED: "archived",
+};
+
+// Task priority
+export const TaskPriorityEnum = {
+  LOW: "low",
+  MEDIUM: "medium",
+  HIGH: "high",
+  URGENT: "urgent",
+};
